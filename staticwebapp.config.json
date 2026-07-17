@@ -7,18 +7,6 @@
     {
       "route": "/present",
       "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/api/admin/*",
-      "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/api/presenter/*",
-      "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/api/settings",
-      "allowedRoles": ["authenticated"]
     }
   ],
   "navigationFallback": {

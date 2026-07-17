@@ -144,16 +144,20 @@ function Admin() {
   const [total, setTotal] = useState(0);
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [settings, setSettings] = useState(defaultSettings);
 
   async function refresh() {
     setLoading(true);
+    setError(null);
     try {
       const [questionResponse, settingsResponse] = await Promise.all([listQuestions(filters), getSettings()]);
       setData(questionResponse.questions);
       setTotal(questionResponse.total);
       setCounts(Object.fromEntries(questionResponse.countsByStatus.map((item) => [item.status, item.count])));
       setSettings(settingsResponse);
+    } catch {
+      setError('Unable to load questions. Please refresh or sign in again.');
     } finally {
       setLoading(false);
     }
@@ -189,6 +193,8 @@ function Admin() {
           </button>
         </div>
       </section>
+
+      {error && <p role="alert">{error}</p>}
 
       <section className="settings-strip" aria-label="Town hall settings">
         <label>
