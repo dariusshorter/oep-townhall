@@ -30,6 +30,9 @@ jobs:
       - name: Build app and API
         run: npm run build
 
+      - name: Install production API dependencies
+        run: npm install --prefix api --omit=dev
+
       - name: Include Static Web Apps config in frontend output
         run: cp staticwebapp.config.json frontend/dist/staticwebapp.config.json
 
