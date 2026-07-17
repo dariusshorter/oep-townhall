@@ -214,7 +214,14 @@ export async function getSettings(): Promise<TownHallSettings> {
       successMessage: String(entity.successMessage ?? defaultSettings.successMessage)
     };
   } catch {
-    await saveSettings(defaultSettings);
+    await client.upsertEntity({
+      partitionKey: 'settings',
+      rowKey: 'active',
+      submissionsOpen: defaultSettings.submissionsOpen,
+      townHallName: defaultSettings.townHallName,
+      landingPrompt: defaultSettings.landingPrompt,
+      successMessage: defaultSettings.successMessage
+    });
     return defaultSettings;
   }
 }
