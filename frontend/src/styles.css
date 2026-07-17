@@ -1,0 +1,447 @@
+:root {
+  color: #17252a;
+  background: #f7f8f6;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: #163b45;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+.icon-button {
+  align-items: center;
+  background: #163b45;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 700;
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+.primary-link-button {
+  align-items: center;
+  background: #163b45;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  margin-top: 1rem;
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button.secondary-button {
+  background: #e8efed;
+  color: #163b45;
+}
+
+button.selected {
+  background: #2f6f4e;
+}
+
+button svg,
+.icon-button svg {
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+:focus-visible {
+  outline: 3px solid #b48a2c;
+  outline-offset: 3px;
+}
+
+.site-header {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #dce4e1;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+}
+
+.brand img {
+  display: block;
+  height: 42px;
+  max-width: min(66vw, 360px);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.public-page {
+  display: grid;
+  min-height: calc(100vh - 147px);
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.question-panel {
+  display: grid;
+  gap: 2rem;
+  max-width: 880px;
+  width: 100%;
+}
+
+.eyebrow {
+  color: #2f6f4e;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #163b45;
+  font-size: clamp(2rem, 6vw, 4.25rem);
+  letter-spacing: 0;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.anonymity,
+.content-page p,
+.admin-toolbar p {
+  color: #4b5c60;
+  font-size: 1.05rem;
+  max-width: 760px;
+}
+
+.question-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.question-form label,
+.settings-strip span {
+  font-weight: 800;
+}
+
+textarea,
+input,
+select {
+  background: #fff;
+  border: 1px solid #bfcac7;
+  border-radius: 8px;
+  color: #17252a;
+  min-height: 44px;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.form-footer {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.form-footer span {
+  color: #52666a;
+}
+
+.success-state,
+.notice {
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #dce4e1;
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.success-state svg {
+  color: #2f6f4e;
+  height: 2rem;
+  width: 2rem;
+}
+
+.error {
+  color: #9f1d2c;
+  font-weight: 700;
+}
+
+.content-page {
+  margin: 0 auto;
+  max-width: 880px;
+  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
+}
+
+.centered {
+  text-align: center;
+}
+
+.large-icon {
+  color: #163b45;
+  height: 3rem;
+  margin-bottom: 1rem;
+  width: 3rem;
+}
+
+.admin-page {
+  display: grid;
+  gap: 1.2rem;
+  margin: 0 auto;
+  max-width: 1320px;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.admin-toolbar,
+.settings-strip,
+.filter-grid,
+.status-counts {
+  background: #fff;
+  border: 1px solid #dce4e1;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.admin-toolbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-toolbar h1 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.settings-strip,
+.filter-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.settings-strip label,
+.filter-grid label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.filter-grid label {
+  position: relative;
+}
+
+.filter-grid svg {
+  color: #66787b;
+  height: 1rem;
+  left: 0.75rem;
+  position: absolute;
+  top: 0.9rem;
+  width: 1rem;
+}
+
+.filter-grid label input,
+.filter-grid label select {
+  padding-left: 2.25rem;
+}
+
+.checkbox-filter {
+  align-items: center;
+  display: flex !important;
+  flex-direction: row;
+}
+
+.checkbox-filter input {
+  width: auto;
+}
+
+.status-counts {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.status-counts div {
+  border-left: 4px solid #b48a2c;
+  padding-left: 0.8rem;
+}
+
+.status-counts strong {
+  display: block;
+  font-size: 1.7rem;
+}
+
+.question-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.question-card {
+  background: #fff;
+  border: 1px solid #dce4e1;
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.question-card.archived {
+  opacity: 0.68;
+}
+
+.question-meta {
+  color: #52666a;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.question-card p {
+  font-size: 1.15rem;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.question-controls {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+
+.question-card textarea {
+  min-height: 92px;
+}
+
+.presenter-page {
+  background: #102d35;
+  color: #fff;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+.presenter-bar,
+.presenter-controls {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.presenter-bar div,
+.presenter-controls {
+  display: flex;
+}
+
+.presenter-bar button,
+.presenter-controls button {
+  background: #f3f7f4;
+  color: #163b45;
+}
+
+.presenter-card {
+  align-items: center;
+  display: grid;
+  margin: 2rem 0;
+}
+
+.presenter-card p {
+  font-size: clamp(2.2rem, 6vw, 5.8rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.12;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+footer {
+  align-items: center;
+  background: #fff;
+  border-top: 1px solid #dce4e1;
+  color: #52666a;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer svg {
+  flex: 0 0 auto;
+  height: 1rem;
+  width: 1rem;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 720px) {
+  .site-header,
+  .admin-toolbar,
+  .form-footer,
+  .presenter-bar,
+  .presenter-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+}

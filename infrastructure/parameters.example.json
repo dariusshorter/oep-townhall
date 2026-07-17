@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "value": "oep-townhall"
+    },
+    "location": {
+      "value": "centralus"
+    },
+    "adminAllowedGroupId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "adminAllowedUsers": {
+      "value": "admin1@originexteriorpartners.com,admin2@originexteriorpartners.com"
+    },
+    "townHallName": {
+      "value": "OEP Strategy Town Hall"
+    },
+    "staticWebAppSku": {
+      "value": "Standard"
+    }
+  }
+}

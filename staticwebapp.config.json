@@ -1,0 +1,48 @@
+{
+  "routes": [
+    {
+      "route": "/admin",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/present",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/admin/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/presenter/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/settings",
+      "allowedRoles": ["authenticated"]
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/api/*", "/assets/*"]
+  },
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+    "Permissions-Policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()"
+  },
+  "responseOverrides": {
+    "401": {
+      "redirect": "/unauthorized",
+      "statusCode": 302
+    },
+    "403": {
+      "redirect": "/unauthorized",
+      "statusCode": 302
+    }
+  },
+  "platform": {
+    "apiRuntime": "node:20"
+  }
+}
