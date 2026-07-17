@@ -37,6 +37,7 @@ jobs:
           mkdir api-deploy
           cp api/host.json api/package.json api/package-lock.json api-deploy/
           cp -R api/dist api-deploy/dist
+          node -e "const fs=require('fs'); const pkg=require('./api-deploy/package.json'); delete pkg.scripts; delete pkg.devDependencies; fs.writeFileSync('./api-deploy/package.json', JSON.stringify(pkg, null, 2));"
           npm ci --prefix api-deploy --omit=dev
 
       - name: Include Static Web Apps config in frontend output
