@@ -59,7 +59,7 @@ app.http('publicSettings', {
 app.http('adminListQuestions', {
   methods: ['GET'],
   authLevel: 'anonymous',
-  route: 'admin/questions',
+  route: 'manage/questions',
   handler: async (request: HttpRequest) => {
     if (!isAuthorizedAdmin(request)) return unauthorized();
     const filters = Object.fromEntries(request.query.entries());
@@ -75,7 +75,7 @@ app.http('adminListQuestions', {
 app.http('adminUpdateQuestion', {
   methods: ['PATCH'],
   authLevel: 'anonymous',
-  route: 'admin/questions/{id}',
+  route: 'manage/questions/{id}',
   handler: async (request: HttpRequest) => {
     if (!isAuthorizedAdmin(request)) return unauthorized();
     const body = await readJson(request);
@@ -125,7 +125,7 @@ app.http('presenterAnswered', {
 app.http('adminExport', {
   methods: ['GET'],
   authLevel: 'anonymous',
-  route: 'admin/export',
+  route: 'manage/export',
   handler: async (request: HttpRequest) => {
     if (!isAuthorizedAdmin(request)) return unauthorized();
     const questions = await listQuestions({});

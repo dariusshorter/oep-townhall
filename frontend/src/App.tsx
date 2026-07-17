@@ -185,7 +185,7 @@ function Admin() {
           <p>{total} total submissions</p>
         </div>
         <div className="toolbar-actions">
-          <a className="icon-button" href="/api/admin/export" aria-label="Download CSV">
+          <a className="icon-button" href="/api/manage/export" aria-label="Download CSV">
             <Download aria-hidden="true" />
           </a>
           <button className="icon-button" type="button" onClick={refresh} aria-label="Refresh questions">

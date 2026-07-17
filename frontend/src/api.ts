@@ -61,11 +61,11 @@ export function listQuestions(filters: QuestionFilters): Promise<QuestionListRes
       params.set(key, String(value));
     }
   });
-  return request(`/api/admin/questions?${params.toString()}`);
+  return request(`/api/manage/questions?${params.toString()}`);
 }
 
 export function updateQuestion(id: string, changes: Partial<TownHallQuestion>): Promise<TownHallQuestion> {
-  return request(`/api/admin/questions/${encodeURIComponent(id)}`, {
+  return request(`/api/manage/questions/${encodeURIComponent(id)}`, {
     method: 'PATCH',
     body: JSON.stringify(changes)
   });
